@@ -15,7 +15,7 @@ export class UsersService {
     })
     return await createdUser.save()
   }
-  findAll() {
-    return this.users;
+  async findAll() {
+    return await this.userModel.find().exec();
   }
 }
