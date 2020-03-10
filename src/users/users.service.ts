@@ -19,7 +19,7 @@ export class UsersService {
     return await this.userModel.find().exec();
   }
   async findOne(username: string) {
-    const user = await this.userModel.findOne({ username })
+    const user = await this.userModel.findOne({ username }).exec()
     if (!user) {
       throw new NotFoundException('Could not find user');
     }
